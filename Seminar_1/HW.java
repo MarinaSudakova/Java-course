@@ -21,21 +21,26 @@ import java.io.IOException;
 
 public class HW {
     
-    public static int readFile(String name) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(name));
-        String str;
-        int a = 0;
-        int b = 0;
-        while ((str = br.readLine()) != null) {
-            if (str.charAt(0) == 'a') {
-                a = Integer.parseInt(str.substring(3, 6));
+    public static int[] readFile(String name) throws Exception{
+        int[] num = new int[2];
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(name));
+            String str;
+            // int[] num = new int[2];
+            while ((str = br.readLine()) != null) {
+                if (str.charAt(0) == 'a') {
+                    num[0] = Integer.parseInt(str.substring(2, str.length()));
+                }
+                if (str.charAt(0) == 'b') {
+                    num[1] = Integer.parseInt(str.substring(2, str.length()));
+                }
+            br.close();
+            // return num;
             }
-            if (str.charAt(0) == 'b') {
-                b = Integer.parseInt(str.substring(3, 6));
-            }
+        } catch (IOException e) {
+            System.out.println("Error");
         }
-        br.close();
-        return a, b;
+        return num;
     }
 
 
@@ -58,12 +63,24 @@ public class HW {
         }
     }
 
-    public static void main(String[] args) {
+    // public static void main(String[] args) {
 
-        int a; int b = readFile("input.txt");
+    //     int[] array = readFile("input.txt");
+    //     int a = array[0];
+    //     int b = array[1];
+    //     System.out.printf("%a , %b", a, b);
+    //     int res = powInt(a, b); 
+    //     System.out.println(res);
+    //     writeOut("input.txt", res);
+    // }
+    public static void main(String[] args) throws Exception {
+
+        int[] array = readFile("Seminar_1/input.txt");
+        int a = array[0];
+        int b = array[1];
         System.out.printf("%a , %b", a, b);
         int res = powInt(a, b); 
         System.out.println(res);
-        writeOut("input.txt", res);
+        writeOut("Seminar_1/output.txt", res);
     }
 }
