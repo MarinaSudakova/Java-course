@@ -10,52 +10,59 @@
 // Результат нужно сохранить в файле output.txt
 // 1000
 
-
-
 package Seminar_1;
+
 import java.io.*;
-import java.io.FileWriter;
 import java.io.IOException;
 
+public class HW1 {
 
-
-public class HW {
-    
-    public static int[] readFile(String name) throws Exception{
+    public static int[] readFile(String name) throws Exception {
         int[] num = new int[2];
+        BufferedReader br = new BufferedReader(new FileReader(name));
         try {
-            BufferedReader br = new BufferedReader(new FileReader(name));
             String str;
-            // int[] num = new int[2];
             while ((str = br.readLine()) != null) {
+                str = str.replace(" ", "");
                 if (str.charAt(0) == 'a') {
-                    num[0] = Integer.parseInt(str.substring(2, str.length()));
+                    num[0] = Integer.parseInt(str.substring(1));
+                } else if (str.charAt(0) == 'b') {
+                    num[1] = Integer.parseInt(str.substring(1));
                 }
-                if (str.charAt(0) == 'b') {
-                    num[1] = Integer.parseInt(str.substring(2, str.length()));
-                }
-            br.close();
-            // return num;
             }
         } catch (IOException e) {
             System.out.println("Error");
         }
+        br.close();
         return num;
     }
 
+    public static String powInt(int value, int powValue) {
+        String out = "";
+        double result = value;
+        if (powValue > 1) {
+            for (int i = 1; i < powValue; i++) {
+                result = result * value;
+                out = String.format("Result %s", result);
+            }
 
-    public static int powInt(int value, int powValue) {
-        int result = 1;
-        for (int i = 1; i <= powValue; i++) {
-            result = result * value;
+        } else if (powValue < 0) {
+            for (int i = 1; i >= powValue; i--) {
+                result = result / value;
+                out = String.format("Result %s", result);
+            }
+
+        } else if (powValue == 0 & value != 0) {
+            out = "Result 1";
+        } else if (powValue == 0 & value == 0) {
+            out = "Not possible";
         }
-        return result;
+        return out;
     }
 
-    public static void writeOut(String name, int res) {
-        String towrite = String.format("Result %res", res);
+    public static void writeOut(String name, String res) {
         try (FileWriter fw = new FileWriter(name, false)) {
-            fw.write(towrite);
+            fw.write(res);
             fw.append('\n');
             fw.flush();
         } catch (IOException ex) {
@@ -63,24 +70,22 @@ public class HW {
         }
     }
 
-    // public static void main(String[] args) {
-
-    //     int[] array = readFile("input.txt");
-    //     int a = array[0];
-    //     int b = array[1];
-    //     System.out.printf("%a , %b", a, b);
-    //     int res = powInt(a, b); 
-    //     System.out.println(res);
-    //     writeOut("input.txt", res);
-    // }
     public static void main(String[] args) throws Exception {
 
         int[] array = readFile("Seminar_1/input.txt");
+
         int a = array[0];
+
         int b = array[1];
-        System.out.printf("%a , %b", a, b);
-        int res = powInt(a, b); 
-        System.out.println(res);
-        writeOut("Seminar_1/output.txt", res);
+
+        System.out.printf("a %d , b %d\n", a, b);
+
+        String result = powInt(a, b);
+
+        System.out.println(result);
+
+        writeOut("Seminar_1/output.txt", result);
+
     }
+
 }
