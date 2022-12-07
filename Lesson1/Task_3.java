@@ -28,7 +28,7 @@ public class Task_3 {
     }
 
     public static void main(String[] args) {
-        int[] workArr = {4, 3, 2, 2, 1, 7, 3, 7, 8, 3};
+        int[] workArr = {3, 2, 2, 3, 1, 3, 7, 6, 8, 9};
         replace(workArr, 3);
         printArray(workArr);
     }
