@@ -54,9 +54,9 @@
     apt install mysql-server
     
     
-<img width="710" alt="Снимок экрана 2023-05-28 в 23 30 33" src="https://github.com/Silva0308/summary/assets/108118608/7f0f23b8-26a6-46bb-ba67-7f19bb76f9bd">
+<img width="710" alt="Задание 3.1" src="https://github.com/Silva0308/summary/assets/108118608/7f0f23b8-26a6-46bb-ba67-7f19bb76f9bd">
     
-<img width="710" alt="Снимок экрана 2023-05-28 в 23 30 54" src="https://github.com/Silva0308/summary/assets/108118608/3b79bd81-195a-4e64-a095-449b0aab7396">
+<img width="710" alt="Задание 3.2" src="https://github.com/Silva0308/summary/assets/108118608/3b79bd81-195a-4e64-a095-449b0aab7396">
 
 4. Установить и удалить deb-пакет с помощью dpkg. 
 
