@@ -31,7 +31,7 @@
 - cat "Домашние животные.txt" "Вьючные животные.txt" > "Друзья человека.txt"
 - cat "Друзья человека.txt"
 
-<img width="1001" alt="Задание 1" src="https://github.com/Silva0308/summary/assets/108118608/c742f01e-b70f-40a5-ab5e-a1c266e30e59">
+<img width="1001" alt="Задание 1" src="https://github.com/MarinaSudakova/Java-course/blob/main/Controlnaya/IMG_3387.JPEG">
 
 2. Создать директорию, переместить файл туда.
 
