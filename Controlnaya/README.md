@@ -38,8 +38,8 @@
 Выполнениие команды:
 
 - mkdir "Питомник"
-- mv "Друзья человека.txt" /home/valeria/Питомник
-<img width="982" alt="Снимок экрана 2023-05-24 в 23 42 09" src="https://github.com/Silva0308/summary/assets/108118608/ce9a561d-5945-486e-be98-667d41341320">
+- mv "Друзья человека.txt" /home/marina/Питомник
+<img width="982" alt="Задание 2" src="https://github.com/MarinaSudakova/Java-course/blob/main/Controlnaya/IMG_3389.JPEG">
 
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.
 
